@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        #main {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        img {
+            width: 700px;
+            height: 500px;
+            margin: 0px 50px;
+            transform: translateX(0px);
+        }
+
+        button {
+            background-color: rgba(0, 0, 0, 0.592);
+            width: 20px;
+            height: 55px;
+            color: white;
+            
+        }
+        #left_button{
+            position: relative;
+            top: 50%;
+            left: 10px;
+        }
+        #right_button{
+            position: relative;
+            top: 50%;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <button id="left_button"><i class="fa-duotone fa-solid fa-caret-left"></i></button>
+
+
+        <img src="/rr1.webp" alt="" class="images">
+        <img src="rr2.webp" alt="" class="images">
+        <img src="rr3.jpg" alt="" class="images">
+        <img src="/rr1.webp" alt="" class="images">
+        <img src="rr2.webp" alt="" class="images">
+
+        <button id="right_button"><i class="fa-solid fa-caret-right"></i></button>
+
+    </div>
+
+    <script>
+
+        let main = document.getElementById('main');
+        let lbtn = document.getElementById('left_button');
+        let rbtn = document.getElementById('right_button');
+        let imge = document.querySelectorAll('.images');
+        let count = 0;
+
+        function slider() {
+
+            imge.forEach((img) => {
+
+                img.style.transform = `translateX(${count})`
+
+            })
+
+
+        }
+
+        rbtn.addEventListener("click", () => {
+
+            count += 700;
+
+            console.log(count)
+
+            if (count > 3500) {
+
+                count = 0;
+                slider();
+            }
+            else {
+                slider();
+            }
+
+        });
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
